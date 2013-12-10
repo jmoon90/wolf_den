@@ -1,0 +1,25 @@
+<h1>Create a Post</h1>
+
+<%= link_to 'Back to Posts', posts_path %>
+
+<% if @post.errors.any? %>
+  <ul>
+    <% @post.errors.full_messages.each do |error| %>
+      <li><%= error %></li> 
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @post do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <%= f.submit 'Save' %>
+<% end %>
