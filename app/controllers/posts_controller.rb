@@ -13,8 +13,22 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to '/posts'
     else
-      binding.pry
       render :new
+    end
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+
+    if @post.update_attributes(post_params)
+      flash[:notice] = "Post saved successfully."
+      redirect_to '/posts'
+    else
+      render :edit
     end
   end
 
