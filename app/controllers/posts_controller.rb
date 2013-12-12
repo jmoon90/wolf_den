@@ -25,8 +25,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update_attributes(post_params)
-      flash[:notice] = "Post saved successfully."
-      redirect_to '/posts'
+      redirect_to '/posts', notice: "Post saved successfully."
     else
       render :edit
     end
