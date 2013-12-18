@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to '/posts'
+      redirect_to '/posts', notice: "Post saved successfully."
     else
       render :new
     end
