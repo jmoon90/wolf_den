@@ -3,3 +3,26 @@
 <h1><%= @post.title %></h1>
 
 <p><%= @post.content %></p>
+
+<h4>Add a Comment</h4>
+<%= form_for([@post, @comment]) do |f| %>
+  <% if @comment.errors.any? %>
+    <ul>
+      <% @comment.errors.full_messages.each do |error| %>
+        <li><%= error %></li> 
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div>
+    <%= f.label(:email) %>
+    <%= f.text_field(:email) %>
+  </div>
+
+  <div>
+    <%= f.label(:body) %>
+    <%= f.text_area(:body) %>
+  </div>
+
+  <%= f.submit "Save comment", class: "button" %>
+<% end %>

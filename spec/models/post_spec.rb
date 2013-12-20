@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Post do
+  it { should have_many(:comments).dependent(:destroy) }
+
   # valid_attribute
   it { should have_valid(:title).when("John", "M00n") }
   it { should_not have_valid(:title).when(nil, "") }
