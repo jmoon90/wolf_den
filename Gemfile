@@ -32,6 +32,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'foundation-rails'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'capybara'
