@@ -3,6 +3,5 @@
 <%= link_to 'Add a Post', new_post_path %>
 
 <% @posts.each do |post| %>
-  <h3><%= post.title %></h3>
-  <p><%= post.content %></p>
+  <%= render "posts/post", post: post  %>
 <% end %>
