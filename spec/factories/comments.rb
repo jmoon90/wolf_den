@@ -2,8 +2,9 @@
 
 FactoryGirl.define do
   factory :comment do
-    body "MyString"
-    email "MyString"
-    post_id 1
+    association :post
+
+    sequence(:body) { |n| "I disagree with point #{n} that you made" }
+    sequence(:email) { |n| "troll#{n}@yahoo.com" }
   end
 end
