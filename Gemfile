@@ -46,6 +46,10 @@ group :development, :test do
   gem 'shoulda-matchers'
 end
 
+group :test do
+  gem 'coveralls', require: false
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
