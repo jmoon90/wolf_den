@@ -1,7 +1,6 @@
 Blog::Application.routes.draw do
-  devise_scope :user do
-      root :to => 'devise/sessions#new'
-  end
+  root 'posts#index'
+
   devise_for :users
   resources :posts, only: [:index, :show, :new, :create, :edit, :update] do
     resources :comments, only: [:create]
