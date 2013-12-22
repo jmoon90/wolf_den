@@ -20,14 +20,13 @@ describe "User" do
     expect(page).to have_content 'Sign in'
   end
 
- # it 'sign out' do
- #   user = FactoryGirl.create(:user)
- #   click_link 'Sign in' do
- #     fill_in 'Email', with: user[:email]
- #     fill_in 'Password', with: 'password'
- #   end
- #   click_button 'Sign in'
- #   expect(page).to have_content 'Sign out'
- # end
+  it 'sign out' do
+    click_link 'Sign up'
+      fill_in 'Email', with: 'johnwat@yahoo.com'
+      fill_in 'Password', with: 'password'
+      fill_in 'Password confirmation', with: 'password'
+    click_button 'Sign up'
+    expect(page).to have_content 'Sign out'
+  end
 
 end
