@@ -46,6 +46,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'valid_attribute'
   gem 'shoulda-matchers'
+  gem 'quiet_assets'
 end
 
 group :test do
