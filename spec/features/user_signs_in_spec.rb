@@ -19,10 +19,9 @@ feature 'Sign in' do
     visit new_user_session_path
 
     within('form#new_user') do
-    click_on 'Sign in'
+      click_on 'Sign in'
     end
 
     expect(page).to have_content 'Invalid email or password.'
   end
-
 end
