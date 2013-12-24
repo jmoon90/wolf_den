@@ -16,25 +16,10 @@ feature 'Sign up' do
   end
 
   scenario 'error message with invalid or email exists' do
+
     visit new_user_registration_path
+    click_on 'Sign up'
 
-    within('form#new_user') do
-      fill_in 'Email', with: 'jmoon90@aol.com'
-      fill_in "Password", with: 'cherrypie'
-      fill_in "Password confirmation", with: 'cherrypie'
-      click_on 'Sign up'
-    end
-
-    visit destroy_user_session_path
-    visit new_user_registration_path
-
-    within('form#new_user') do
-      fill_in 'Email', with: 'jmoon90@aol.com'
-      fill_in "Password", with: 'cherrypie'
-      fill_in "Password confirmation", with: 'cherrypie'
-      click_on 'Sign up'
-    end
-
-    expect(page).to have_content 'Email has already been taken'
+    expect(page).to have_content "Email can't be blank"
   end
 end
